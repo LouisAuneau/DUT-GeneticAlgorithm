@@ -50,4 +50,5 @@ while True:
 for chemin in population:
     print str(chemin.chemin) + " -> " + str(chemin.evaluation)
 population[0].tracer(carte, "graphs/final.png", "b")
+print population[0].calculDistanceReelle(carte)
 

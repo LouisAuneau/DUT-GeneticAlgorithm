@@ -62,4 +62,13 @@ class Chemin:
             ax.plot(xChemin, yChemin, linestyle="--", color=couleur) # On ajoute le chemin
             
         fig.savefig(fichier) # On genere l'image
-        
+
+
+    def calculDistanceReelle(self, carte):
+        distance = 0
+        for i in range(0, len(self.chemin)):
+            if i < len(self.chemin) - 1:
+                distance = distance + carte.getDistance(carte.villes[self.chemin[i]], carte.villes[self.chemin[i+1]])
+            else: # Distance entre la derniere ville et la premiere
+                distance = distance + carte.getDistance(carte.villes[self.chemin[0]], carte.villes[self.chemin[i]])
+        return distance
